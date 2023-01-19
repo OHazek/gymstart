@@ -1,0 +1,20 @@
+{% extends 'start.html' %}
+{% block content %}
+<h1> Wybierz plan dla siebie </h1>
+   <form method="post">
+    {% csrf_token %}
+    <label> Ile dni w tygodniu chcesz przeznaczyc na trening </label>
+    <select name="dni" class="form-control">
+        <option value="case1">1-2dni</option>
+        <option value="case2">3-5dni</option>
+        <option value="case3">6 dni</option>
+    </select>
+    <h1><label> Nazwa </label>
+    <input type="text" value="{{ nazwa }}" class="form-control"/>
+    </h1>
+       <h1><label> Plan treningowy </label></h1>
+    <textarea name="nazwa" cols="200" rows="7" disabled>{{ opis }}</textarea><button class="btn btn-outline-primary" type="submit">Pokaz plan</button>
+
+   </form>
+
+{% endblock %}

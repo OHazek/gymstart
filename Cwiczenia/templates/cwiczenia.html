@@ -1,0 +1,12 @@
+    {% extends 'home.html' %}
+    {% block cwiczenie %}
+
+        {% if cwiczenie_user %}
+            <h1> {{ cwiczenie_user.nazwa }} </h1>
+            <p> <textarea name="nazwa" cols="100" rows="15" disabled>{{ cwiczenie_user.opis }}</textarea> </p>
+            <p><a href = "{{ film }} "> Zobacz film instruktarzowy </a></p>
+        {% else%}
+             <p> Nie ma takiego cwiczenia w tej bazie danych. </p>
+        {% endif %}
+
+    {% endblock %}

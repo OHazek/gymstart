@@ -1,0 +1,7 @@
+ {% extends 'home.html' %}
+    {% block cwiczenie %}
+    <h1>Najnowsze rekordy</h1>
+    {% for i in rekordy %}
+    <p><a href="rekord/{{ i.id }}">{{i.nazwa}}</a> </p>
+    {% endfor %}
+    {% endblock %}

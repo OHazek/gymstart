@@ -1,0 +1,10 @@
+{% extends 'start.html' %}
+
+{% block content %}
+    <h1>Nowy rekord</h1>
+    <p> W nazwie wpisz swoje imie oraz date</p>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-primary">Zapisz</button>
+    </form>
+{% endblock %}

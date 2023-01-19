@@ -1,0 +1,21 @@
+{% extends 'start.html' %}
+{% block content %}
+
+    <aside style="width:30%; height: 700px; float: left; text-indent: 10px;">
+
+            <h4> Usługi </h4>
+            <p><a class="btn btn-outline-primary" href = "/kalkulator/" > Kalkulator </a></p>
+            <p><a class="btn btn-outline-primary" href = "/plan/" > Plan treningowy </a></p>
+            <h4> Partie miesniowe </h4>
+            {% for kat in partie %}
+                <p><a class="btn btn-outline-primary" href = "/partie/{{kat.id }}" > {{ kat.nazwa }} </a> </p>
+            {% endfor %}
+    </aside>
+    <main style="width:60%; height: 700px; float: right;">
+
+        {% block cwiczenie %} {% endblock %}
+
+    </main>
+
+
+{% endblock %}

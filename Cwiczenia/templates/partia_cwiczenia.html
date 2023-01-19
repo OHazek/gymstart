@@ -1,0 +1,15 @@
+ {% extends 'home.html' %}
+    {% block cwiczenie %}
+
+        <h1> Cwiczenia </h1>
+            {% if partia_cwiczenie %}
+
+                {% for partia in partia_cwiczenie %}
+
+                     <p><a class="btn btn-outline-primary" href="/cwiczenie/{{ partia.id }}"> {{ partia.nazwa }} </a> </p>
+
+                {% endfor %}
+
+            {% else %}
+            {% endif %}
+    {% endblock %}

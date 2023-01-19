@@ -1,0 +1,65 @@
+{% extends 'start.html' %}
+{% block content %}
+<h1> Witaj wylicz kalorie</h1>
+<body >
+<form method="post">
+    {% csrf_token %}
+    <aside style="width:30%; height: 700px; float: left;">
+    <h4><label> Waga </label>
+    <input type="text" name="waga" class="form-control"/>
+    </h4>
+    <h4><label> Wiek </label>
+    <input type="text" name="wiek" class="form-control"/>
+    </h4>
+    <h4><label> Wzrost </label>
+    <input type="text" name="wzrost" class="form-control"/>
+    </h4>
+    <h4>
+    <label> Płec </label>
+    <select name="plec" class="form-control">
+        <option value="M">M</option>
+        <option value="K">K</option>
+    </select>
+    </h4>
+    <h4>
+    <label> Poziom aktywnosci fizycznej </label>
+    <select name="wariant" class="form-control">
+        <option value="1.2">Nic nie robie poza lezeniem</option>
+        <option value="1.4">Czasem chodze na pieszo</option>
+        <option value="1.6">Czasem cwicze (1-2 w tygodniu)</option>
+        <option value="1.75">Cwicze regularnie (3-4 razy w tygodniu)</option>
+        <option value="2">Duzo trenuje poruszam sie glownie pieszo mam aktywna prace</option>
+        <option value="2.3">Wyczynowe uprawianie sportu</option>
+
+    </select>
+    </h4>
+
+            <h4> Co planujesz osiagnac</h4>
+        <p><input type="radio" name="cel" value="case1" checked> Zachowac aktualna wage </p>
+        <p><input type="radio" name="cel" value="case2" > Zredukowac wage </p>
+           <p> <input type="radio" name="cel" value="case3"> Przybrac na masie </p>
+
+    </aside>
+
+
+    <main style="width:60%; height: 700px; float: right;">
+        <h4> Powinienes spozywac: </h4>
+        <h4> <label> Kalorie (kcal) </label>
+    <input type="text" value="{{ wynik }}" class="form-control"/>
+    </h4>
+        <h4>
+            <label> Białko (g)</label>
+            <input type="text" value="{{ bialko }}" class="form-control" />
+        </h4>
+        <h4>
+            <label> Wegle (g) </label>
+            <input type="text" value="{{ wegle }}" class="form-control" />
+        </h4>
+        <h4>
+            <label> Tłuszcze (g) </label>
+            <input type="text" value="{{ tluszcze }}" class="form-control" /><button class="btn btn-outline-primary" type="submit">Oblicz</button>
+        </h4>
+    </main>
+</form></body>
+
+{% endblock %}

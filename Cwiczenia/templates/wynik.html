@@ -1,0 +1,9 @@
+{% extends 'home.html' %}
+    {% block cwiczenie %}
+
+<h1>{{ rekord.nazwa }}</h1>
+<p>Uzytkownik: {{ rekord.user }}</p>
+<p>Cwiczenie: {{ rekord.cwiczenie }}</p>
+<p>Wynik: {{ rekord.rekord_kg }} kg</p>
+
+    {% endblock %}
